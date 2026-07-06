@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Us, By The Numbers 💕</title>
+<title>احنا كام بالمية 💕</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
 <style>
   :root{
     --plum-black: #2B0F1C;
@@ -26,7 +26,7 @@
       radial-gradient(circle at 15% 10%, var(--blush) 0%, transparent 45%),
       radial-gradient(circle at 85% 90%, var(--gold) 0%, transparent 35%),
       var(--paper);
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Tajawal', sans-serif;
     color: var(--plum-black);
     display:flex;
     flex-direction:column;
@@ -47,7 +47,7 @@
   }
 
   h1{
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Amiri', serif;
     font-weight:600;
     font-size: clamp(2.2rem, 6vw, 3.2rem);
     margin: 0 0 10px;
@@ -101,7 +101,7 @@
   }
 
   .q-text{
-    font-family:'Cormorant Garamond', serif;
+    font-family:'Amiri', serif;
     font-size: 1.5rem;
     font-weight:600;
     color: var(--deep-rose);
@@ -116,12 +116,12 @@
   }
 
   .option-btn{
-    text-align:left;
+    text-align:right;
     background: var(--paper);
     border: 1.5px solid transparent;
     border-radius: 14px;
     padding: 14px 18px;
-    font-family:'Quicksand', sans-serif;
+    font-family:'Tajawal', sans-serif;
     font-size: 0.95rem;
     color: var(--plum-black);
     cursor:pointer;
@@ -177,7 +177,7 @@
   }
 
   .dial-percent .num{
-    font-family:'Cormorant Garamond', serif;
+    font-family:'Amiri', serif;
     font-size: 2.6rem;
     font-weight:600;
     color: var(--deep-rose);
@@ -191,7 +191,7 @@
   }
 
   .result-title{
-    font-family:'Cormorant Garamond', serif;
+    font-family:'Amiri', serif;
     font-size: 1.6rem;
     font-weight:600;
     color: var(--deep-rose);
@@ -199,7 +199,7 @@
   }
 
   .result-msg{
-    font-family:'Cormorant Garamond', serif;
+    font-family:'Amiri', serif;
     font-size: 1.15rem;
     font-style: italic;
     line-height:1.6;
@@ -213,7 +213,7 @@
     color: var(--deep-rose);
     padding: 10px 24px;
     border-radius: 100px;
-    font-family:'Quicksand', sans-serif;
+    font-family:'Tajawal', sans-serif;
     font-weight:600;
     font-size: 0.85rem;
     cursor:pointer;
@@ -229,6 +229,36 @@
     text-align:center;
   }
 
+  .game-nav{
+    display:flex;
+    gap: 10px;
+    background: var(--paper-warm);
+    border-radius: 100px;
+    padding: 6px;
+    box-shadow: 0 4px 14px var(--shadow);
+    margin-bottom: 30px;
+  }
+
+  .game-nav a{
+    text-decoration:none;
+    font-family:'Tajawal', sans-serif;
+    font-weight:600;
+    font-size: 0.82rem;
+    color: var(--deep-rose);
+    padding: 9px 20px;
+    border-radius: 100px;
+    transition: all 0.2s ease;
+  }
+
+  .game-nav a.active{
+    background: var(--deep-rose);
+    color: var(--paper);
+  }
+
+  .game-nav a:not(.active):hover{
+    background: var(--blush);
+  }
+
   @media (prefers-reduced-motion: reduce){
     *{ animation: none !important; transition: none !important; }
   }
@@ -236,17 +266,23 @@
 </head>
 <body>
 
+  <nav class="game-nav">    
+    <a href="index.html">لعبة الذاكرة</a>
+    <a href="calculator.html" class="active" >حاسبة الحب</a>
+    <a href="maze.html" >الطريق لأحمد</a>
+  </nav>
+
   <div class="hero">
-    <div class="eyebrow">A very unscientific experiment</div>
-    <h1>Us, <em>By The Numbers</em></h1>
-    <p class="sub">Answer honestly. The result was rigged from the start — but let's make it official anyway. 🤍</p>
+    <div class="eyebrow">تجربة مش علمية خالص</div>
+    <h1>احنا كام <em>بالمية</em></h1>
+    <p class="sub">جاوبي بصراحة. النتيجة مرتبة من الأول — بس خلينا نخليها رسمية. 🤍</p>
   </div>
 
   <div class="card-panel">
     <div class="progress" id="progress"></div>
 
     <div id="quiz-view">
-      <div class="q-eyebrow" id="q-count">Question 1 of 6</div>
+      <div class="q-eyebrow" id="q-count">سؤال 1 من 6</div>
       <div class="q-text" id="q-text"></div>
       <div class="options" id="options"></div>
     </div>
@@ -259,79 +295,79 @@
         </svg>
         <div class="dial-percent">
           <span class="num" id="pct-num">0%</span>
-          <span class="pct-label">Compatible</span>
+          <span class="pct-label">توافق</span>
         </div>
       </div>
       <div class="result-title" id="result-title"></div>
       <p class="result-msg" id="result-msg"></p>
-      <button class="again-btn" id="againBtn">Run It Back</button>
+      <button class="again-btn" id="againBtn">جربي تاني</button>
     </div>
   </div>
 
-  <footer>Made with love, for Menna. 💌</footer>
+  <footer>بالحب، لـ منة. 💌</footer>
 
 <script>
 const QUESTIONS = [
   {
-    text: "When we disagree about something small, what usually happens?",
+    text: "لما بنختلف في حاجة بسيطة، بيحصل إيه غالبًا؟",
     options: [
-      "One of us makes the other laugh and it's over",
-      "We talk it out properly",
-      "We both go quiet, then come back to it"
+      "حد فينا بيضحك التاني والموضوع بيخلص",
+      "بنتكلم فيها صح لحد ما نتفاهم",
+      "بنسكت شوية، وبعدين بنرجع نتكلم"
     ]
   },
   {
-    text: "Pick the closest thing to our ideal Friday night:",
+    text: "اختاري أقرب حاجة لأمسية الجمعة المثالية بتاعتنا:",
     options: [
-      "Staying in, doing nothing, together",
-      "Trying somewhere new to eat",
-      "A long call or video chat"
+      "نقعد في البيت مش بنعمل حاجة، بس مع بعض",
+      "نجرب مكان أكل جديد",
+      "مكالمة فيديو طويلة"
     ]
   },
   {
-    text: "What do you think I'd say is your best quality?",
+    text: "في رأيك، إيه أحلى حاجة فيكي هقولها؟",
     options: [
-      "How you make me feel understood",
-      "Your sense of humor",
-      "How steady and reliable you are"
+      "إحساسك إنك بتفهميني",
+      "خفة دمك",
+      "ثباتك واعتمادي عليكي"
     ]
   },
   {
-    text: "If I had a rough day, what would help most?",
+    text: "لو كان يومي تعبان، إيه أكتر حاجة تساعدني؟",
     options: [
-      "Just listening, no fixing",
-      "A distraction — something fun",
-      "Practical help sorting it out"
+      "بس تسمعيني من غير ما تحاولي تحلي المشكلة",
+      "حاجة تلهيني وتفرحني",
+      "مساعدة عملية في حل الموضوع"
     ]
   },
   {
-    text: "Which of these feels most true about us?",
+    text: "أي من دول أقرب حاجة لطبيعتنا مع بعض؟",
     options: [
-      "We bring out the calm in each other",
-      "We bring out the fun in each other",
-      "We push each other to grow"
+      "بنطلع الهدوء اللي جوه بعض",
+      "بنطلع البهجة اللي جوه بعض",
+      "بندفع بعض نكبر ونتطور"
     ]
   },
   {
-    text: "Last one — what do you think this quiz is going to say?",
+    text: "آخر سؤال — في رأيك النتيجة هتقول إيه؟",
     options: [
-      "Something ridiculously high",
-      "I have no idea, surprise me",
-      "Whatever it says, I already know the answer"
+      "نسبة عالية جدًا مش طبيعية",
+      "مش عارفة، فاجئني",
+      "أيًّا كان اللي هيتقال، أنا عارفة الإجابة أصلًا"
     ]
   }
 ];
 
 const RESULT_TITLES = [
-  "Statistically Undeniable",
-  "Off The Charts",
-  "Written In The Stars (and the code)"
+  "نتيجة مفيهاش شك",
+  "خارج كل المقاييس",
+  "مكتوبة من زمان (والكود بس أكدها)"
 ];
 
 const RESULT_MESSAGES = [
-  "No matter which answers you picked, the math always lands on the same place — because some things don't need a quiz to prove them. This one's just for fun.",
-  "The numbers say what I already knew the day I met you. This is just the universe agreeing with me.",
-  "Turns out compatibility isn't really about the answers — it's about who you're answering with. That part, I got right."
+  "أيًّا كانت إجاباتك، الحساب دايمًا بيوصل لنفس النتيجة — لأن بعض الحاجات مش محتاجة اختبار عشان تثبتها. ده بس للمتعة.",
+  "الأرقام بتقول اللي أنا عارفه من يوم ما قابلتك. ده بس الكون بيوافقني على كلامي.",
+  "طلع إن التوافق مش في الإجابات — في مين بتجاوبي معاه. وده الجزء اللي أنا متأكد منه."
 ];
 
 let currentQ = 0;
@@ -360,7 +396,7 @@ function buildProgress(){
 function renderQuestion(){
   buildProgress();
   const q = QUESTIONS[currentQ];
-  qCountEl.textContent = `Question ${currentQ + 1} of ${QUESTIONS.length}`;
+  qCountEl.textContent = `سؤال ${currentQ + 1} من ${QUESTIONS.length}`;
   qTextEl.textContent = q.text;
   optionsEl.innerHTML = '';
   q.options.forEach((opt, idx) => {
